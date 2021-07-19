@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+
+    <label for="search">Tìm Kiếm</label>
+    <input type="text" name="Search" id="search">
+    <button type="button" onclick="search()">Search</button> <br> <br>
+    <span id="result"></span>
+
+<script>
+    let english = ["Hello", "Goodbye", "My Love"];
+    let vietnam = ["Xin Chào", "Tạm Biệt", "Tình Yêu Của Tôi"];
+
+
+    function search() {
+        let s = document.getElementById("search").value;
+        for (let i = 0; i < english.length; i++){
+            if(s === english[i] || s === i.toString()) {
+                document.getElementById("result").innerHTML = english[i]+ " - " + vietnam[i];
+                break;
+            } else {
+                document.getElementById("result").innerHTML = "Không Tìm Thấy";
+            }
+        }
+    }
+</script>
+</body>
+</html>
